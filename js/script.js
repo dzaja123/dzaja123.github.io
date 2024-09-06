@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 skillBars.forEach(bar => {
-                    const width = bar.getAttribute('data-width') || bar.style.width;
+                    const width = bar.getAttribute('data-width');
                     bar.style.width = '0';
                     setTimeout(() => {
                         bar.style.width = width;
@@ -183,4 +183,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const burger = document.querySelector('.burger');
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
+
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        // Burger Animation
+        burger.classList.toggle('toggle');
+    });
+
+    // Scroll effect for header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.main-header');
+        header.classList.toggle('scrolled', window.scrollY > 0);
+    });
 });

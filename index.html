@@ -8,10 +8,26 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <header class="header">
+    <header class="main-header">
         <div class="container">
-            <h1>Nikola Džajević</h1>
-            <p>Python Developer & IT Consultant</p>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Nikola Džajević</h1>
+                    <p>Python Developer & IT Consultant</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
         </div>
     </header>
     <nav class="nav-bar">
@@ -26,15 +42,35 @@
     <main class="container">
         <section id="about">
             <h2>Empowering Your Business with Python Expertise</h2>
-            <p>I specialize in full-cycle software development, IT consulting, and end-to-end QA automation. With a strong foundation in Python and experience in defense, finance, and telecommunications, I deliver precise and innovative solutions.</p>
             
-            <p>In today's business climate, creative solutions that fit your budget are crucial. I maintain transparency in my processes and deliverables from day one, ensuring you understand and engage with every step.</p>
+            <h3>About</h3>
+            <p>I specialize in full-cycle Software Development, IT consulting, and End-to-End QA Automation. With a strong foundation in Python and experience in Defense Industry, FinTech, and Telecommunications, I deliver precise and innovative solutions tailored to your needs.</p>
             
-            <p>From developing data migration tools to real-time tracking systems, I focus on enhancing your business performance.</p>
+            <h3>Key Areas of Expertise</h3>
+            <ul>
+                <li><strong>Custom Software Development:</strong> Skilled in developing bespoke software solutions that meet specific requirements with high performance and functionality.</li>
+                <li><strong>End-to-End Quality Assurance:</strong> Adept in implementing comprehensive testing methodologies to ensure high-quality, bug-free software.</li>
+                <li><strong>IT Consulting:</strong> Providing expert advice on technology strategy and implementation, focusing on practical solutions. I offer mentoring to guide your team through complex technological challenges and ensure that solutions align with your business goals.</li>
+                <li><strong>Serial Communication Protocols:</strong> Expertise in integrating CAN, RS232, RS422, and RS485 protocols for seamless data exchange and robust communication interfaces.</li>
+                <li><strong>GUI Development:</strong> Skilled in development of user-friendly graphical interfaces that enhance user experience and streamline interactions.</li>
+            </ul>
             
-            <p><strong>Let's connect to explore how I can help you achieve your technology goals.</strong></p>
+            <h3>Approach and Commitment</h3>
+            <p>In today's competitive business environment, creative solutions that fit your budget are crucial. I maintain transparency in my processes and deliverables from day one, ensuring you understand and engage with every step of the development journey. My primary focus is on enhancing your business performance and aligning technology solutions with your strategic goals.</p>
             
-            <a href="#contact" class="cta-button">Discuss Your Project</a>
+            <h3>Let's connect to explore how I can help you achieve your technology goals.</h3>
+            <div class="connect-options">
+                <a href="https://www.linkedin.com/in/nikola-dzajevic/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nikola Džajević's LinkedIn profile" class="connect-button linkedin-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#0077B5">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="connect-button email-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#333">
+                        <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                    </svg>
+                </a>
+            </div>
         </section>
 
         <section id="services">
@@ -64,32 +100,32 @@
                 <div class="skill-category">
                     <h3>Languages</h3>
                     <ul class="skills-list">
-                        <li><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div></li>
-                        <li><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div></li>
-                        <li><span class="skill-name">Java</span><div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div></li>
-                        <li><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div></li>
+                        <li><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-level" data-width="95%"></div></div></li>
+                        <li><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-level" data-width="90%"></div></div></li>
+                        <li><span class="skill-name">Java</span><div class="skill-bar"><div class="skill-level" data-width="85%"></div></div></li>
+                        <li><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-level" data-width="80%"></div></div></li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Technologies</h3>
                     <ul class="skills-list">
-                        <li><span class="skill-name">AWS (S3)</span><div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div></li>
-                        <li><span class="skill-name">Snowflake</span><div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div></li>
-                        <li><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div></li>
-                        <li><span class="skill-name">Jenkins</span><div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div></li>
-                        <li><span class="skill-name">Cypress</span><div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div></li>
-                        <li><span class="skill-name">Postman</span><div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div></li>
-                        <li><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-level" style="width: 88%;"></div></div></li>
+                        <li><span class="skill-name">AWS (S3)</span><div class="skill-bar"><div class="skill-level" data-width="85%"></div></div></li>
+                        <li><span class="skill-name">Snowflake</span><div class="skill-bar"><div class="skill-level" data-width="80%"></div></div></li>
+                        <li><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-level" data-width="75%"></div></div></li>
+                        <li><span class="skill-name">Jenkins</span><div class="skill-bar"><div class="skill-level" data-width="85%"></div></div></li>
+                        <li><span class="skill-name">Cypress</span><div class="skill-bar"><div class="skill-level" data-width="80%"></div></div></li>
+                        <li><span class="skill-name">Postman</span><div class="skill-bar"><div class="skill-level" data-width="90%"></div></div></li>
+                        <li><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-level" data-width="88%"></div></div></li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Concepts</h3>
                     <ul class="skills-list">
-                        <li><span class="skill-name">ETL</span><div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div></li>
-                        <li><span class="skill-name">REST API</span><div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div></li>
-                        <li><span class="skill-name">CI/CD</span><div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div></li>
-                        <li><span class="skill-name">BDD</span><div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div></li>
-                        <li><span class="skill-name">TDD</span><div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div></li>
+                        <li><span class="skill-name">ETL</span><div class="skill-bar"><div class="skill-level" data-width="90%"></div></div></li>
+                        <li><span class="skill-name">REST API</span><div class="skill-bar"><div class="skill-level" data-width="85%"></div></div></li>
+                        <li><span class="skill-name">CI/CD</span><div class="skill-bar"><div class="skill-level" data-width="80%"></div></div></li>
+                        <li><span class="skill-name">BDD</span><div class="skill-bar"><div class="skill-level" data-width="85%"></div></div></li>
+                        <li><span class="skill-name">TDD</span><div class="skill-bar"><div class="skill-level" data-width="85%"></div></div></li>
                     </ul>
                 </div>
             </div>
@@ -162,9 +198,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        console.log("External script loaded successfully");
-    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
