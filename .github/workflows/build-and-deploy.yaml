@@ -21,3 +21,4 @@ jobs:
         with:
           branch: gh-pages  # Deploy to the gh-pages branch
           folder: .  # Deploy the root directory
+          token: ${{ secrets.PAT }}
