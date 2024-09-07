@@ -1,5 +1,3 @@
-Portfolio Website
-
 ## Project Overview
 
 This portfolio is a single-page website built with:
