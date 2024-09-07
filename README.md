@@ -37,8 +37,6 @@ The website is hosted on GitHub Pages, allowing for easy updates and maintenance
 
 ## Future Improvements
 
-- Add a blog section
 - Implement a dark mode toggle
-- Enhance accessibility features
 
 For any inquiries or suggestions, please feel free to contact me through the information provided on the website.
