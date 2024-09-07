@@ -387,17 +387,17 @@ footer {
     color: var(--text-color);
 }
 
-.skill-bar {
+/* .skill-bar {
     background-color: #e9ecef;
     margin-top: 5px;
     height: 10px;
-}
+} */
 
-.skill-level {
+/* .skill-level {
     height: 100%;
     background-color: var(--python-yellow);
     border-radius: 5px;
-}
+} */
 
 section {
     border-bottom: 2px solid var(--python-yellow);
