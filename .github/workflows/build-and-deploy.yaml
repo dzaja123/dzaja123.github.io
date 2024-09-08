@@ -36,6 +36,8 @@ jobs:
           git checkout gh-pages || git checkout -b gh-pages  # Checkout to gh-pages or create it if it doesn't exist
           git add .  # Stage all changes
           git commit -m "Update pinned repositories and index.html" || echo "No changes to commit"  # Commit if there are changes
+          git stash  # Stash any local changes
+          git pull origin gh-pages --rebase  # Rebase local changes with remote
           git push origin gh-pages  # Push changes to gh-pages branch
 
       - name: Deploy 🚀
