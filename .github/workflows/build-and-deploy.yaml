@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Set a branch name to trigger deployment
+      - main
 
 jobs:
   build-and-deploy:
@@ -28,12 +28,12 @@ jobs:
                https://api.github.com/graphql \
                > pinned_repos.json
 
-      - name: Commit updated JSON file 📝
+      - name: Commit updated files 📝
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-          git add pinned_repos.json
-          git commit -m "Update pinned repositories"
+          git add .  # Stages all changes
+          git commit -m "Update pinned repositories and index.html"
           git push
 
       - name: Deploy 🚀
