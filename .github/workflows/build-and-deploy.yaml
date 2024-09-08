@@ -1,8 +1,10 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
       - main  # Set a branch name to trigger deployment
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,6 +17,24 @@ jobs:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         run: |
           sed -i 's/__ACCESS_KEY__/'"$ACCESS_KEY"'/g' index.html
+
+      - name: Fetch pinned repositories 📦
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+               -X POST \
+               -d '{"query":"{user(login: \"dzaja123\"){pinnedItems(first: 6, types: REPOSITORY) { edges { node { ... on Repository { name description primaryLanguage { name } url }}}}}}"}' \
+               https://api.github.com/graphql \
+               > pinned_repos.json
+
+      - name: Commit updated JSON file 📝
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git add pinned_repos.json
+          git commit -m "Update pinned repositories"
+          git push
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4

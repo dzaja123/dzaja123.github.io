@@ -212,4 +212,35 @@ document.addEventListener('DOMContentLoaded', () => {
     skillLevels.forEach(level => {
         level.style.width = level.getAttribute('style').split(':')[1].trim();
     });
+
+    // Add the GitHub pinned projects fetching function
+    async function fetchGitHubPinnedProjects() {
+        const response = await fetch('pinned_repos.json');
+        const repos = await response.json();
+    
+        const projectsContainer = document.getElementById('github-projects');
+        if (projectsContainer) {
+            if (repos.length === 0) {
+                projectsContainer.innerHTML = '<p>No pinned repositories found.</p>';
+                return;
+            }
+    
+            repos.forEach(({ node: project }) => {
+                const projectElement = document.createElement('div');
+                projectElement.className = 'project-card';
+                projectElement.innerHTML = `
+                    <h3>${project.name}</h3>
+                    <p>${project.description || 'No description available'}</p>
+                    <p><strong>Language:</strong> ${project.primaryLanguage ? project.primaryLanguage.name : 'Not specified'}</p>
+                    <a href="${project.url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                `;
+                projectsContainer.appendChild(projectElement);
+            });
+        } else {
+            console.error('GitHub projects container not found');
+        }
+    }
+    
+    // Call the function to fetch and display GitHub pinned projects
+    fetchGitHubPinnedProjects();
 });
