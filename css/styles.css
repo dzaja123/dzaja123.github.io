@@ -1,3 +1,4 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
@@ -5,10 +6,11 @@
     --secondary-color: #2c3e50;
     --text-color: #333;
     --bg-color: #f4f4f4;
-    --header-height: 70px; /* Slightly increased header height */
+    --header-height: 70px;
     --python-yellow: #FFD43B;
 }
 
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -20,13 +22,14 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: calc(var(--header-height) + 20px); /* Add padding to account for the fixed header */
+    padding-top: calc(var(--header-height) + 20px);
 }
 
 main {
-    padding-top: var(--header-height); /* This ensures the main content starts below the header */
+    padding-top: var(--header-height);
 }
 
+/* Header Styles */
 .main-header {
     background-color: var(--secondary-color);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -47,6 +50,7 @@ main {
     padding: 0 2rem;
 }
 
+/* Logo Styles */
 .logo {
     display: flex;
     flex-direction: column;
@@ -76,6 +80,7 @@ main {
     color: #fff;
 }
 
+/* Navigation Styles */
 .nav-links {
     display: flex;
     list-style: none;
@@ -115,6 +120,7 @@ main {
     color: var(--primary-color);
 }
 
+/* Burger Menu Styles */
 .burger {
     display: none;
     cursor: pointer;
@@ -128,6 +134,7 @@ main {
     transition: all 0.3s ease;
 }
 
+/* Responsive Navigation */
 @media screen and (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -186,6 +193,7 @@ main {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Particles Background */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -244,6 +252,7 @@ main {
     margin-bottom: 0;
 }
 
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -252,6 +261,7 @@ footer {
     margin-top: 40px;
 }
 
+/* Services Section */
 .services {
     display: flex;
     justify-content: space-around;
@@ -387,18 +397,6 @@ footer {
     color: var(--text-color);
 }
 
-/* .skill-bar {
-    background-color: #e9ecef;
-    margin-top: 5px;
-    height: 10px;
-} */
-
-/* .skill-level {
-    height: 100%;
-    background-color: var(--python-yellow);
-    border-radius: 5px;
-} */
-
 section {
     border-bottom: 2px solid var(--python-yellow);
     padding-bottom: 40px;
@@ -508,4 +506,43 @@ button[type="submit"]:hover {
 
 .email-icon:hover svg {
     fill: #EA4335;
+}
+
+/* General Section Styles */
+section {
+    border-bottom: 2px solid var(--python-yellow);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(var(--moveX), var(--moveY));
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .service-item {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        flex-basis: 100%;
+    }
 }
