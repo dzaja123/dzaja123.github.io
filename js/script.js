@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     projectElement.innerHTML = `
                         <h3>${project.name}</h3>
                         <p>${project.description || 'No description available'}</p>
-                        <p><strong>Language:</strong> ${project.primaryLanguage ? project.primaryLanguage.name : 'Not specified'}</p>
+                        <p><strong>Primary Language:</strong> ${project.primaryLanguage ? project.primaryLanguage.name : 'Not specified'}</p>
                         <a href="${project.url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                     `;
                     projectsContainer.appendChild(projectElement);
