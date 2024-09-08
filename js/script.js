@@ -250,5 +250,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Call the function to fetch and display GitHub pinned projects
     fetchGitHubPinnedProjects();
-    
 });
