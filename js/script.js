@@ -206,4 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const header = document.querySelector('.main-header');
         header.classList.toggle('scrolled', window.scrollY > 0);
     });
+
+    // Set width of skill levels
+    const skillLevels = document.querySelectorAll('.skill-level');
+    skillLevels.forEach(level => {
+        level.style.width = level.getAttribute('style').split(':')[1].trim();
+    });
 });
