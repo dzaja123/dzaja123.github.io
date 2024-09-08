@@ -37,7 +37,7 @@ jobs:
           git add .  # Stage all changes
           git commit -m "Update pinned repositories and index.html" || echo "No changes to commit"  # Commit if there are changes
           git stash  # Stash any local changes
-          git pull origin gh-pages --rebase  # Rebase local changes with remote
+          git pull origin gh-pages --rebase || true  # Continue rebase even if conflicts occur
           git push origin gh-pages  # Push changes to gh-pages branch
 
       - name: Deploy 🚀
