@@ -50,6 +50,29 @@ main {
     padding: 0 2rem;
 }
 
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 60px;
+    }
+
+    .main-header {
+        height: var(--header-height);
+        padding: 0.5rem 0;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Logo Styles */
 .logo {
     display: flex;
@@ -138,17 +161,16 @@ main {
 @media screen and (max-width: 768px) {
     .nav-links {
         position: fixed;
-        right: 0;
-        height: calc(100vh - var(--header-height));
-        top: var(--header-height);
+        right: -100%;
+        height: 100vh;
+        top: 0;
         background-color: var(--secondary-color);
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        padding-top: 2rem;
+        width: 100%;
+        transition: right 0.5s ease-in;
+        padding-top: var(--header-height);
     }
 
     .nav-links li {
@@ -158,6 +180,28 @@ main {
 
     .burger {
         display: block;
+        position: absolute;
+        right: 2rem;
+        z-index: 2000;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .main-header {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
     }
 }
 
@@ -656,6 +700,7 @@ section.visible {
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Add this to include padding in width calculation */
 }
 
 .form-group input:focus,
@@ -696,6 +741,18 @@ button[type="submit"]:hover {
 
     #contact-form {
         max-width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Increase font size for better readability on mobile */
+        padding: 12px; /* Increase padding for larger touch targets */
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 12px 20px;
+        max-width: 100%; /* Make button full width on mobile */
     }
 }
 
