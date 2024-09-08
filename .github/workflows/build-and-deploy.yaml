@@ -32,7 +32,7 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-          git add pinned_repos.json  # Stages all changes
+          git add .  # Stages all changes
           git commit -m "Update pinned repositories and index.html"
           git push
 
