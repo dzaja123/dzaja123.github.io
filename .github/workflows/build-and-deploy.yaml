@@ -26,15 +26,16 @@ jobs:
                -X POST \
                -d '{"query":"{user(login: \"dzaja123\"){pinnedItems(first: 6, types: REPOSITORY) { edges { node { ... on Repository { name description primaryLanguage { name } url }}}}}}"}' \
                https://api.github.com/graphql \
-               > pinned_repos.json
+               > json/pinned_repos.json
 
       - name: Commit updated files 📝
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-          git checkout gh-pages  # Switch to the gh-pages branch
-          git add .  # Stages all changes
-          git commit -m "Update pinned repositories and index.html"
+          git fetch origin  # Fetch the latest branches
+          git checkout gh-pages || git checkout -b gh-pages  # Checkout to gh-pages or create it if it doesn't exist
+          git add .  # Stage all changes
+          git commit -m "Update pinned repositories and index.html" || echo "No changes to commit"  # Commit if there are changes
           git push origin gh-pages  # Push changes to gh-pages branch
 
       - name: Deploy 🚀
