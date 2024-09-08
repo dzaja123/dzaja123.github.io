@@ -26,10 +26,9 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-          git add json/pinned_repos.json  # Stages all changes
-          git add .  # Stages all changes
-          git commit -m "Update pinned repositories"
-          git push
+          git add json/pinned_repos.json  # Stage the updated file
+          git diff --cached --quiet || git commit -m "Update pinned repositories"  # Only commit if there are changes
+          git push origin main  # Push to the main branch
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
