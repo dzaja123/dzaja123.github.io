@@ -28,7 +28,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add json/pinned_repos.json  # Stages all changes
           git add .  # Stages all changes
-          git commit -m "Update pinned repositories and index.html"
+          git commit -m "Update pinned repositories"
           git push
 
       - name: Deploy 🚀
