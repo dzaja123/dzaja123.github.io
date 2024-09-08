@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add the GitHub pinned projects fetching function
     async function fetchGitHubPinnedProjects() {
         try {
-            const response = await fetch('pinned_repos.json');
+            const response = await fetch('json/pinned_repos.json');
             const data = await response.json();
     
             // Extract the repositories list
