@@ -220,10 +220,17 @@ main {
 
     #about, #featured-projects, #projects {
         padding: 20px;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .service-item {
         flex-basis: calc(50% - 20px);
+    }
+
+    section {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -235,6 +242,8 @@ main {
 
     #about, #featured-projects, #projects {
         padding: 15px;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .project-card {
@@ -243,6 +252,11 @@ main {
 
     .project-card h3 {
         font-size: 1.1rem;
+    }
+
+    section {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -253,6 +267,8 @@ main {
 
     #about, #featured-projects, #projects {
         padding: 10px;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .project-card {
@@ -276,6 +292,11 @@ main {
         font-size: 14px;
         padding: 10px 15px;
     }
+
+    section {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 320px) {
@@ -285,6 +306,8 @@ main {
 
     #about, #featured-projects, #projects {
         padding: 8px;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .project-card {
@@ -303,11 +326,16 @@ main {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
+
+    section {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes navLinkFade {
     from {
-        opacity: 0;
+        opacity: 0.8;
         transform: translateX(50px);
     }
     to {
